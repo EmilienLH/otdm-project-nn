@@ -26,7 +26,7 @@ function [wk, niter] = uo_nn_gm(w, f, g, epsG, kmax, epsal, kmaxBLS, almax, c1, 
         k = k + 1;
 
         % Print iteration number and loss value
-        fprintf('Iteration %d: Loss = %f\n', k, f(w, Xtr, ytr));
+        % fprintf('Iteration %d: Loss = %f\n', k, f(w, Xtr, ytr));
     end
     
     % return the number of iterations performed

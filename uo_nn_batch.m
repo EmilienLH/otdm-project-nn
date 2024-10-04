@@ -13,12 +13,13 @@ sg_emax = kmax; sg_ebest = floor(0.01*sg_emax);               % SGM stopping con
 % Optimization
 %
 global iheader; iheader = 1;
-csvfile = strcat('uo_nn_batch_',num2str(tr_seed),'-',num2str(te_seed),'-',num2str(sg_seed),'.csv');
+output_dir = 'C:\Users\emili\Documents\!Cours\INFO5\otdm\uo_nn_v40\CSV\'; % Specify the directory where you want to save the CSV file
+csvfile = strcat(output_dir, 'uo_nn_batch_',num2str(tr_seed),'-',num2str(te_seed),'-',num2str(sg_seed),'.csv');
 fileID = fopen(csvfile ,'w');
 t1=clock;
 for num_target = [1:10]
     for la = [0.0, 0.01, 0.1]
-        for isd = [1,3,7]
+        for isd = [1,2]
             [Xtr,ytr,wo,fo,tr_acc,Xte,yte,te_acc,niter,tex]=uo_nn_solve(num_target,tr_freq,tr_seed,tr_p,te_seed,te_q,la,epsG,kmax,ils,ialmax,kmaxBLS,epsal,c1,c2,isd,sg_al0,sg_be,sg_ga,sg_emax,sg_ebest,sg_seed,icg,irc,nu);
             if iheader == 1
                 fprintf(fileID,'num_target;      la; isd;  niter;     tex; tr_acc; te_acc;        L*;\n');

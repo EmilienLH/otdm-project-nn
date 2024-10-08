@@ -1,0 +1,5 @@
+# Ignore code workspace file
+*.code-workspace
+
+# Ignore CSV folder
+CSV/

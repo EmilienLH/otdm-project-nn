@@ -22,7 +22,7 @@ c1 = 0.01;
 c2 = 0.45;
 
 % Search direction parameters
-isd = 1; % 1: GM, 2: BFGS, 3: SGM
+isd = 3; % 1: GM, 2: BFGS, 3: SGM
 icg = 2; % Only for CGM (not used in this problem)
 irc = 2; % Same as above
 nu = 1.0; % Same as above

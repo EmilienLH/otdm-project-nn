@@ -129,7 +129,7 @@ function [Xtr,ytr,wo,fo,tr_acc,Xte,yte,te_acc,niter,tex]=uo_nn_solve(num_target,
         [wk, niter] = uo_nn_bfgs(w, L, gL, epsG, kmax, epsal, kmaxBLS, ialmax, c1, c2, Xtr, ytr);
     elseif isd == 3 % Stochastic Gradient Method (SGM)
         fprintf('[uo_nn_solve] Stochastic Gradient Method \n');
-        
+        [wk, niter] = uo_nn_sgm(w, L, gL, Xtr, ytr, Xte, yte, sg_al0, sg_be, sg_ga, sg_emax, sg_ebest);
     end 
 
     fprintf('[uo_nn_solve] Optimization done, in %d iterations.\n', niter);

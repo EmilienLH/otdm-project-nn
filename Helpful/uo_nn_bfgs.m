@@ -40,7 +40,7 @@ function [wk, niter] = uo_nn_bfgs(w, f, g, epsG, kmax, epsal, kmaxBLS, almax, c1
         % increment iteration counter
         k = k + 1;
 
-        % Print iteration number and loss value
+        % Print iteration number and loss value for debugging
         % fprintf('Iteration %d: Loss = %f\n', k, f(w, Xtr, ytr));
     end
     
